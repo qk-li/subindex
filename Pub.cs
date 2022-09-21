@@ -232,7 +232,7 @@ namespace Subindex
 			if  (!OverWrite&&File.Exists(FileName))
 				if (MessageBox.Show(FileName+GetSetting("SaveFileOverWriteText").Replace(@"\r\n","\r\n"),GetSetting("SaveFileOverWriteTitle"),MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.No)
 					return "";
-			StreamWriter sw = new StreamWriter(FileName,false,Encoding.Default);
+			StreamWriter sw = new StreamWriter(FileName,false,Encoding.UTF8);
 			sw.Write(Loging(FileBuffer)); 
 			sw.Close();
 			switch (Pub.SaveDoType)
